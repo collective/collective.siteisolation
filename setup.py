@@ -3,7 +3,7 @@ import os
 
 version = '0.1'
 
-setup(name='kuleuven.siteisolation',
+setup(name='collective.siteisolation',
       version=version,
       description="Isolate objects in a Zope root from each other",
       long_description=open("README.txt").read() + "\n" +
@@ -22,7 +22,11 @@ setup(name='kuleuven.siteisolation',
       include_package_data=True,
       zip_safe=False,
       extras_require=dict(
-            test=['zope.testing']),
+            test=['zope.testing'],
+            docs=['z3c.recipe.sphinxdoc',
+                  'docutils',
+                  'collective.sphinx.includechangelog',
+                  'collective.sphinx.includedoc']),
       install_requires=[
           'setuptools',
           'zope.component',
