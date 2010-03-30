@@ -25,4 +25,4 @@ Author
 ======
 
  * ICTS Team - KULeuven (https://admin.kuleuven.be/icts)
- * Jean-François Roche <jfroche at affinitic dot be>
+ * Jean-Francois Roche <jfroche at affinitic dot be>
