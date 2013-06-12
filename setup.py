@@ -11,6 +11,7 @@ setup(name='collective.siteisolation',
       classifiers=[
           "Programming Language :: Python",
           "Programming Language :: Python :: 2.6",
+          "Programming Language :: Python :: 2.7",
           "Framework :: Plone",
           "Framework :: Plone :: 4.1",
           "Framework :: Plone :: 4.3",
