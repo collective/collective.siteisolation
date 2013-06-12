@@ -2,10 +2,10 @@
 from zope.component import adapts
 from zope.interface import alsoProvides, Interface, implements
 try:
-    from zope.app.component.hooks import getSite
-    getSite  # Pyflakes Fix
-except ImportError:  # Fix import for Plone 4.3
     from zope.component.hooks import getSite
+    getSite  # Pyflakes Fix
+except ImportError:  # Plone < 4.3
+    from zope.app.component.hooks import getSite
 from zope.publisher.interfaces.http import IHTTPRequest
 from zope.publisher.interfaces import IPublishTraverse
 from ZPublisher.BaseRequest import DefaultPublishTraverse
