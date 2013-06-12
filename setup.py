@@ -6,7 +6,7 @@ version = '0.1'
 setup(name='collective.siteisolation',
       version=version,
       description="Isolate objects in a Zope root from each other",
-      long_description=open("README.txt").read() + "\n" +
+      long_description=open("README.rst").read() + "\n" +
       open(os.path.join("docs", "HISTORY.txt")).read(),
       classifiers=[
           "Programming Language :: Python",
