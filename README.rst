@@ -16,11 +16,6 @@ You will be able to traverse Site2 from Site1 just by traversing::
 
 This package avoid this behavior by adding verification during traversal.
 
-  * Documentation: http://docs.affinitic.be/collective.siteisolation
-  * Code Repository: https://svn.plone.org/svn/collective/collective.siteisolation
-  * Buildbot: http://buildbot.affinitic.be/builders/collective.siteisolation%20linux_debian/
-  * Test Coverage: http://coverage.affinitic.be/collective.siteisolation/collective.siteisolation.html
-
 Author
 ======
 
