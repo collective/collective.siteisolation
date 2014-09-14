@@ -33,8 +33,8 @@ collective.siteisolation.interfaces.IIsolatedObject is detected during traversal
 
 To make this a little faster, IObjectToIsolate is only detected at the ZODB root when a list of objects to isolate is created on first traverse. That list is memoized for the life of the Zope instance, so adding new objects to isolate requires a restart.
 
-Author
-======
+Authors
+=======
 
  * ICTS Team - KULeuven (https://admin.kuleuven.be/icts)
  * Jean-Francois Roche <jfroche at affinitic dot be>
