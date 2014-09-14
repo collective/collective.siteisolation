@@ -36,4 +36,9 @@ setup(name='collective.siteisolation',
           'setuptools',
           'zope.component',
           'plone.memoize',
-          'zope.interface'])
+          'zope.interface'],
+      entry_points="""
+          [z3c.autoinclude.plugin]
+          target = plone
+      """,
+      )

@@ -4,6 +4,10 @@ Changelog
 0.3 (unreleased)
 ----------------
 
+- Add z3c.autoinclude.plugin magic invocation, removing the need to specify the
+  package in buildout's zcml section.
+  [smcmahon]
+
 - Add automatic marking of IIsolatedObject and IObjectToIsolated objects for
   all Plone sites. Since a Plone site is never within a plone site, this is relatively
   safe. There is one exceptional case I can think of: subsites. Admins that wish to isolate
@@ -12,7 +16,8 @@ Changelog
 
 - Add interface declarations for IIsolatedObject and IObjectToIsolate so that
   they appear in the "Interfaces" tab in the ZMI. This will allow admins to mark
-  non-plone objects interactively. [smcmahon]
+  non-plone objects interactively.
+  [smcmahon]
 
 
 0.2 (2013-06-12)
