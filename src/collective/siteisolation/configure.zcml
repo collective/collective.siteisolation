@@ -1,4 +1,5 @@
 <configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:zcml="http://namespaces.zope.org/zcml"
            i18n_domain="collective.siteisolation">
 
   <include package="zope.component" file="meta.zcml"/>
@@ -10,5 +11,20 @@
   <adapter
       factory=".traverser.IsolatedRequestTraverser"
       provides="zope.publisher.interfaces.IPublishTraverse"/>
+
+  <interface
+    interface=".interfaces.IIsolatedObject" />
+
+  <interface
+    interface=".interfaces.IObjectToIsolate" />
+
+  <configure zcml:condition="installed Products.CMFPlone">
+    <class class="Products.CMFPlone.Portal.PloneSite">
+      <implements
+        interface="collective.siteisolation.interfaces.IIsolatedObject" />
+      <implements
+        interface="collective.siteisolation.interfaces.IObjectToIsolate" />
+    </class>
+  </configure>
 
 </configure>
