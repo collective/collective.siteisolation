@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from zope.component import adapts
-from zope.interface import alsoProvides, Interface, implements
+from zope.interface import alsoProvides, Interface, implementer
 try:
     from zope.component.hooks import getSite
     getSite  # Pyflakes Fix
@@ -43,6 +43,7 @@ class BaseIsolatedTraverser(DefaultPublishTraverse):
         return obj
 
 
+@implementer(IPublishTraverse)
 class IsolatedSiteTraverser(BaseIsolatedTraverser):
     """
     This traverser is applied only once you traverse an IIsolatedObject.
@@ -57,7 +58,6 @@ class IsolatedSiteTraverser(BaseIsolatedTraverser):
           isolated objects.
     """
     adapts(IIsolatedObject, IHTTPRequest)
-    implements(IPublishTraverse)
 
     def publishTraverse(self, request, name):
         namesToTraverse = frozenset([name] + self.request['TraversalRequestNameStack'])
@@ -69,6 +69,7 @@ class IsolatedSiteTraverser(BaseIsolatedTraverser):
             return super(IsolatedSiteTraverser, self).publishTraverse(request, name)
 
 
+@implementer(IPublishTraverse)
 class IsolatedRequestTraverser(BaseIsolatedTraverser):
     """
     This traverser is applied only for marked request with IPotentialBadRequest
@@ -78,7 +79,6 @@ class IsolatedRequestTraverser(BaseIsolatedTraverser):
     isolated objects.
     """
     adapts(Interface, IPotentialBadRequest)
-    implements(IPublishTraverse)
 
     def publishTraverse(self, request, name):
         return self._traverseAndCheckObject(request, name)
